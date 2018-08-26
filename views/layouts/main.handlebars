@@ -1,0 +1,81 @@
+<!Doctype html>
+<html lang = "en">
+  <head>
+    <title>Eat da Burger</title>
+    <link rel="icon" href="/assets/img/Spicy-Masala-Veggie-Burgers.jpg">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- jQuery -->
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script src="https://code.jquery.com/jquery.js"></script>
+   <!--script src="../public/js/burgers.js"></script-->
+   <!-- CSS -->
+   <link rel = "stylesheet" type = "text/css" href = "assets/css/burger_style.css">
+  </head>
+  <body>
+    <div class = "container">
+      <div class = "row">
+        <div class = "col-md-4"></div>
+        <div class = "col-md-4">
+          <h1>Eat da Burger!! </h1>
+          <img src = "assets/img/burger.jpg" width = "200" height = "150" alt = "Burger Image">
+        </div>
+        <div class = "col-md-4"></div>
+      </div>
+
+      <!-- Burger content from index.handlebars -->
+      {{{body}}}
+    </div>
+
+    <script>
+    $(function(){
+
+      //jQuery event handlers should go here.
+      // $(".devour").on("click", function(event){
+      //   event.preventDefault();
+      //   console.log("Ajax call");
+      //   var id = $(this).data("id");
+      // //  var newDevour = $(this).data("newdevour");
+      //
+      //   var newDevourState = {
+      //     devoured: 1
+      //   };
+      //
+      //   //Sending the devoured request
+      //   $.ajax("/burger/eat/:id" + id, {
+      //     type:"PUT",
+      //     data: newDevourState
+      //   }).then(
+      //     function(){
+      //       console.log("You just ate your burger");
+      //       location.reload();
+      //     }
+      //   );
+      // });
+
+      //New burger adding
+      $(".create-form").on("submit", function(event) {
+        event.preventDefault();
+
+        var newBurger = {
+          burger_name: $("#bur").val().trim()
+        };
+        console.log(newBurger);
+        //Sending the POST request
+        $.ajax("/burger/create", {
+          type: "POST",
+          data: newBurger
+        }).then(
+          function(){
+            console.log("Ordered for a new burger.")
+            //Reload the page to ger the updated listen
+            location.reload();
+          }
+        );
+      });
+    });
+
+    </script>
+  </body>
+</html>

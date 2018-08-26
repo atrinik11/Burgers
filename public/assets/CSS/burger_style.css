@@ -1,0 +1,12 @@
+.container{
+    margin: auto;
+    padding: 20px;
+    background-color: orange;
+  }
+  
+  .devour{
+    margin: 5px;
+    background-color: lightblue;
+    border: none;
+  }
+  
