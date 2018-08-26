@@ -21,8 +21,8 @@ var burgers = {
   // },
 
     //Updating one burger in the database
-    updateOne:function(objColVals, condition, callback){
-      orm.updateOne("burgers", objColVals, condition, function(result){
+    updateOne:function(burger_id, callback){
+      orm.updateOne(burger_id, function(result){
           callback(result);
       });
     }
