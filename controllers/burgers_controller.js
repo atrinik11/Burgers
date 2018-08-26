@@ -19,7 +19,7 @@ var burger = require("../models/burgers.js");
  });
 
 //Creating a new burgers
- router.post("/burger/create", function(request, response){
+ router.post("/burgers/create", function(request, response){
    burger.insertOne(request.body.burger_name, function(data){
      response.json({id: data.insertId});
    });
@@ -33,7 +33,7 @@ var burger = require("../models/burgers.js");
 // });
 
 //Devour a burgers
-router.put("/burger/:id", function(request, response){
+router.put("/burgers/:id", function(request, response){
    var condition = "id = " + request.params.id;
   // console.log("Condition: ", condition);
   burger.updateOne({
@@ -44,7 +44,7 @@ router.put("/burger/:id", function(request, response){
       }else {
         response.status(200);
         console.log("You just ate a burger!!");
-        response.redirect(("/index"));
+        //response.redirect(("/index"));
       }
   });
 });

@@ -63,7 +63,7 @@
         };
         console.log(newBurger);
         //Sending the POST request
-        $.ajax("/burger/create", {
+        $.ajax("/burgers/create", {
           type: "POST",
           data: newBurger
         }).then(

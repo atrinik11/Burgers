@@ -9,7 +9,7 @@ USE burgers_db;
 -- Creating table burgers --
 CREATE TABLE burgers(
     id INTEGER(10) AUTO_INCREMENT NOT NULL,
-    burger_name VARCHAR(50) NOT NULL,
+    burger_name VARCHAR(255) NOT NULL,
     devoured BOOLEAN ,
     PRIMARY KEY(id)
 );

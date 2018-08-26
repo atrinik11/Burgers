@@ -1,6 +1,5 @@
 var connection = require("./connection.js");
 
-// Helper function for generating My SQL syntax
 // Helper function for generating MySQL syntax
 function printQuestionMarks(num) {
 	var arr = [];
@@ -25,12 +24,12 @@ function objToSql(ob) {
 var orm = {
 
     //selectAll()
-    selectAll: function(tableInput, cb) {
+    selectAll: function(tableInput, callback) {
         var queryString = "SELECT * FROM " + tableInput + ";";
 
         connection.query(queryString, function(error, result) {
             if (error) throw error;
-            cb(result);
+            callback(result);
         });
     },
 
@@ -44,31 +43,6 @@ var orm = {
          });
      },
 
-//     // Function that insert a single table entry
-// insertOne: function(table, cols, vals, cb) {
-//   // Construct the query string that inserts a single row into the target table
-//   var queryString = "INSERT INTO " + table;
-//
-//   queryString += " (";
-//   queryString += cols.toString();
-//   queryString += ") ";
-//   queryString += "VALUES (";
-//   queryString += printQuestionMarks(vals.length);
-//   queryString += ") ";
-//
-//   // console.log(queryString);
-//
-//   // Perform the database query
-//   connection.query(queryString, vals, function(err, result) {
-//     if (err) {
-//       throw err;
-//     }
-//
-//     // Return results in callback
-//     cb(result);
-//   });
-// },
-
     //updateOne()
     // updateOne: function(burgerId, callback) {
     //     var queryString = "UPDATE burgers SET ? WHERE ?";
@@ -79,7 +53,7 @@ var orm = {
     //     });
     // }
     // Function that updates a single table entry
-    updateOne: function(table, objColVals, condition, cb) {
+    updateOne: function(table, objColVals, condition, callback) {
   // Construct the query string that updates a single entry in the target table
       var queryString = "UPDATE " + table;
       queryString += " SET ";
@@ -90,13 +64,13 @@ var orm = {
       // console.log(queryString);
 
       // Perform the database query
-      connection.query(queryString, function(err, result) {
-        if (err) {
+      connection.query(queryString, function(error, result) {
+        if (error) {
           throw err;
         }
 
         // Return results in callback
-        cb(result);
+        callback(result);
       });
     }
 };

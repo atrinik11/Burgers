@@ -16,15 +16,12 @@
     <div class = "col-md-2"></div>
     <div class = "col-md-5">
       <h3>Burgers Devoured</h3>
-      <div id = "consumedBurger">
+      <div >
         {{#each burgers}}
           {{#if this.devoured}}
-            <div>
-              <!--{{> burgers/burger-block devour = true}}-->
-              <li>
-                {{this.id}}.{{this.burger_name}}
-                <button data-id= "{{this.id}}" class = "reorder">Reorder</button>
-              </li>
+            <div id = "consumedBurger">
+              {{this.id}}.{{this.burger_name}}
+              <button data-id= "{{this.id}}" class = "reorder">Reorder</button>
             </div>
           {{/if}}
         {{/each}}
