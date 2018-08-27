@@ -5,8 +5,7 @@
       <h3>Ready to eat Burgers</h3>
       <div id = "readyBurger">
           {{#each burgers}}
-            {{#unless this.devoured}}
-              <!--{{> burgers/burger-block devour = false}} -->
+            {{#unless devoured}}
                 <br>{{this.id}} {{this.burger_name}}
                 <button data-id = "{{this.id}}" class = "devour">Devour it!</button>
             {{/unless}}
@@ -16,12 +15,13 @@
     <div class = "col-md-2"></div>
     <div class = "col-md-5">
       <h3>Burgers Devoured</h3>
-      <div >
+      <div id = "consumedBurger">
         {{#each burgers}}
-          {{#if this.devoured}}
-            <div id = "consumedBurger">
-              {{this.id}}.{{this.burger_name}}
-              <button data-id= "{{this.id}}" class = "reorder">Reorder</button>
+          {{#if devoured}}
+            <div>
+              <li>
+                {{this.id}}.{{this.burger_name}}
+              </li>
             </div>
           {{/if}}
         {{/each}}

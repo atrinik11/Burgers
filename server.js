@@ -2,7 +2,6 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var exphbs = require("express-handlebars");
-var mysql = require("./config/connection.js");
 var router = require("./controllers/burgers_controller.js");
 
 
