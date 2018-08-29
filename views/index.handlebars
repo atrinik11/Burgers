@@ -1,7 +1,8 @@
   <!-- Pass in data from server.js -->
 
-  <div class = "row">
-    <div class = "col-md-5">
+ <div class = "container-fluid">
+  <div class = "row" id = "menu">
+    <div class = "col-md-5" id = "readyToEatMenu">
       <h3>Ready to eat Burgers</h3>
       <div id = "readyBurger">
           {{#each burgers}}
@@ -13,7 +14,7 @@
       </div>
     </div>
     <div class = "col-md-2"></div>
-    <div class = "col-md-5">
+    <div class = "col-md-5" id = "devouredBurger">
       <h3>Burgers Devoured</h3>
       <div id = "consumedBurger">
         {{#each burgers}}
@@ -24,17 +25,18 @@
       </div>
     </div>
   </div>
+</div>
 
 <div class = "row">
   <div class = "col-md-4"></div>
-  <div class = "col-md-4">
+  <div class = "col-md-4" id = "addBurger">
     <h3>Add a burger</h3>
     <form class = "create-form">
       <div class = "form-group">
-        <label for = "burger">Enter a burger name</label><br>
-        <input type = "text" id = "bur" name = "burger_name">
+        {{!-- <label for = "burger">Enter a burger name</label><br> --}}
+        <input type = "textarea" id = "bur" name = "burger_name">
       </div>
-      <button type = "submit" id = "submit">Add Burger</button>
+      <button type = "submit" id = "submit" class = "btn-lg">Add Burger</button>
     </form>
   </div>
   <div class = "col-md-4"></div>

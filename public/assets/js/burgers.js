@@ -41,23 +41,27 @@ $(function() {
     $(".create-form").on("submit", function(event) {
       // Make sure to preventDefault on a submit event.
       event.preventDefault();
-  
-      var newBurger = {
-        burger_name: $("#bur").val().trim(),
-        devoured: false
-      };
-  
-      // Send the POST request.
-      $.ajax("/api/burgers", {
-        type: "POST",
-        data: newBurger
-      }).then(
-        function() {
-          console.log("created new burger");
-          // Reload the page to get the updated list
-          location.reload();
-        }
-      );
+      if($("#bur").val() === ""){
+        alert("Pls enter a burger name in the textbox before submitting.")
+      } else {
+        var newBurger = {
+          burger_name: $("#bur").val().trim(),
+          devoured: false
+        };
+    
+        // Send the POST request.
+        $.ajax("/api/burgers", {
+          type: "POST",
+          data: newBurger
+        }).then(
+          function() {
+            console.log("created new burger");
+            // Reload the page to get the updated list
+            location.reload();
+          }
+      
+        );
+      }
     });
   });
   

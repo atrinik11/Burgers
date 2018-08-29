@@ -2,11 +2,67 @@
   margin: auto;
   margin-top: 20px;
   padding: 20px;
-  background-color: orange;
+  background-color: rgba(255, 166, 0, 0.795);
+}
+
+#image{
+  margin-top: 5px;
+  margin-left: 30px;
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#msg{
+  margin-top: -20px;
+  background-color: rgba(228, 23, 23, 0.719);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  color:white;
+  text-align: center;
+  padding:5px;
+}
+
+h1{
+  text-align: center;
+  margin-left:400px;
+}
+P{
+  margin-top: -10px;
+  font:15px;
+  letter-spacing: .25em;
+  font-display: bold;
 }
 
 .devour{
   margin: 5px;
-  background-color: lightblue;
+  background-color: rgb(165, 162, 156);
   border: none;
+  cursor: pointer;
+}
+.devour:hover{
+  background-color:darkgray;
+  color:white;
+}
+h3{
+  margin-left:25px;
+}
+
+#readyBurger, #consumedBurger{
+  margin-left: 40px;
+  font-size: 18px;
+}
+
+#addBurger{
+  margin-left: 45px;
+  margin-top:5px;
+}
+
+.form-group{
+  margin-left: 15px;
+}
+#submit{
+  margin-left: 30px;
+  background-color:  rgba(228, 23, 23, 0.719);
+  color: white;
+  border:none;
+  cursor: pointer;
 }
