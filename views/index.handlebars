@@ -6,7 +6,7 @@
       <div id = "readyBurger">
           {{#each burgers}}
             {{#unless devoured}}
-                <br>{{this.id}} {{this.burger_name}}
+                {{this.id}} {{this.burger_name}}<br>
                 <button data-id = "{{this.id}}" class = "devour">Devour it!</button>
             {{/unless}}
           {{/each}}
@@ -18,7 +18,7 @@
       <div id = "consumedBurger">
         {{#each burgers}}
           {{#if devoured}}
-              {{this.id}}.{{this.burger_name}}
+            {{this.id}}.{{this.burger_name}}<br>
           {{/if}}
         {{/each}}
       </div>
