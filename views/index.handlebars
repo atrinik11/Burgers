@@ -18,11 +18,7 @@
       <div id = "consumedBurger">
         {{#each burgers}}
           {{#if devoured}}
-            <div>
-              <li>
-                {{this.id}}.{{this.burger_name}}
-              </li>
-            </div>
+              {{this.id}}.{{this.burger_name}}
           {{/if}}
         {{/each}}
       </div>
