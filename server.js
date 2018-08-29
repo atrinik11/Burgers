@@ -3,12 +3,13 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var exphbs = require("express-handlebars");
 var router = require("./controllers/burgers_controller.js");
+var path = require("path");
 
 
 var app = express();
 var PORT = process.env.PORT || 3000;
 
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "public")));
 
 //Sets up the express ap to handle data parsing
 app.use(bodyParser.urlencoded({extended: true}));
