@@ -1,5 +1,6 @@
 Overview
 A Node, Express, Handlebars, and MySQL burger app that lets users input the names of burgers they'd like to eat... and then devour them! Please check out the launched app on Heroku here!
+ https://salty-lowlands-10174.herokuapp.com/
 
 Functionality
 Using ORM, the app has 3 basic CRUD functions...
